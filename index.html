@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rusça Ustalık — A1 → C2</title>
+  <meta name="description" content="Türkçe konuşanlar için A1-C2 Rusça öğrenme ve sonsuz pratik uygulaması.">
+  <style>
+    :root{--bg:#0b1020;--panel:#121a2e;--panel2:#18223a;--text:#eef3ff;--muted:#9eabc5;--accent:#72a7ff;--good:#49d17d;--bad:#ff657a;--line:#2a3857;--gold:#ffd166}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#080d19,#101a30 55%,#0b1020);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    button,input,select{font:inherit} button{cursor:pointer}
+    .app{min-height:100vh}.top{position:sticky;top:0;z-index:5;background:rgba(11,16,32,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 20px}
+    .topbar{max-width:1180px;margin:auto;display:flex;gap:14px;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.3px}.brand span{color:var(--accent)}
+    .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill,.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:9px 12px}.btn.primary{background:var(--accent);color:#071022;border-color:transparent;font-weight:800}.btn.good{background:var(--good);color:#062112;border-color:transparent}
+    main{max-width:1180px;margin:0 auto;padding:28px 20px 70px}.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-bottom:20px}.card{background:rgba(18,26,46,.88);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 12px 35px rgba(0,0,0,.18)}
+    h1{font-size:clamp(30px,5vw,52px);line-height:1.02;margin:0 0 12px}.lead{color:var(--muted);font-size:17px;line-height:1.6}.levelgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:18px}.level{padding:12px 5px;text-align:center;border:1px solid var(--line);border-radius:12px;background:#10182b}.level.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}.level small{display:block;color:var(--muted);margin-top:3px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:var(--panel2);border-radius:14px;padding:15px}.stat b{font-size:24px;display:block}.stat small{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}.section-title{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.section-title h2{margin:0}
+    .meta{color:var(--muted);font-size:13px}.prompt{font-size:21px;line-height:1.55;background:#0c1425;border:1px solid var(--line);padding:18px;border-radius:14px}.ru{font-size:29px;font-weight:800;letter-spacing:.2px}.tr{color:#d8e1f5}.hint{color:var(--gold);margin-top:10px}
+    .answerrow{display:flex;gap:9px;margin-top:12px}.answerrow input{flex:1;background:#0b1221;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:14px;outline:none}.answerrow input:focus{border-color:var(--accent)}
+    .feedback{margin-top:15px;border-radius:15px;padding:17px;display:none}.feedback.show{display:block}.feedback.good{border:1px solid rgba(73,209,125,.45);background:rgba(73,209,125,.09)}.feedback.bad{border:1px solid rgba(255,101,122,.45);background:rgba(255,101,122,.08)}
+    .feedback h3{margin:0 0 8px}.explain{line-height:1.65;color:#dce5f7}.token{display:inline-block;padding:2px 6px;border-radius:6px;background:#263453;margin:1px}
+    .tabs{display:flex;gap:8px;overflow:auto;padding-bottom:4px}.tab{white-space:nowrap}.tab.active{background:var(--accent);color:#071022;border-color:transparent;font-weight:800}
+    .grammar{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.rule{padding:14px;background:#0e1729;border:1px solid var(--line);border-radius:14px}.rule b{display:block;margin-bottom:5px}.rule span{color:var(--muted);line-height:1.55}
+    .case-table{width:100%;border-collapse:collapse}.case-table th,.case-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.case-table th{color:#c9d5ed}.case-table td{color:#b9c6df}
+    .progress{height:8px;background:#202d49;border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:var(--accent);width:0}
+    .footer{color:var(--muted);font-size:12px;margin-top:24px;line-height:1.6}
+    @media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.levelgrid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.grammar{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}.answerrow{flex-direction:column}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="top"><div class="topbar">
+    <div class="brand">🇷🇺 Rusça <span>Ustalık</span></div>
+    <div class="controls">
+      <button class="btn" id="soundBtn">🔊 Telaffuz</button>
+      <button class="btn" id="resetBtn">Sıfırla</button>
+    </div>
+  </div></header>
+
+  <main>
+    <section class="hero">
+      <div class="card">
+        <div class="meta">TÜRKÇE KONUŞANLAR İÇİN • A1 → C2</div>
+        <h1>Rusçayı sadece tanıma.<br>Aktif olarak <span style="color:var(--accent)">kullan.</span></h1>
+        <p class="lead">Kelime ezberinden cümle kurmaya, hâllerden fiil görünüşüne kadar ilerle. Her cevapta <b>neden doğru</b> veya <b>neden yanlış</b> olduğunu Türkçe gramer açıklamasıyla gör.</p>
+        <div class="levelgrid" id="levels"></div>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>İlerleme</h2><span class="meta" id="streakText">Seri: 0</span></div>
+        <div class="stats">
+          <div class="stat"><b id="correct">0</b><small>Doğru</small></div>
+          <div class="stat"><b id="attempts">0</b><small>Deneme</small></div>
+          <div class="stat"><b id="accuracy">0%</b><small>Başarı</small></div>
+          <div class="stat"><b id="xp">0</b><small>XP</small></div>
+        </div>
+        <div style="margin-top:18px"><div class="meta">Seviye ustalığı</div><div class="progress"><i id="progressBar"></i></div></div>
+        <p class="footer">Pratik motoru cevaplarını normalize eder; doğru biçimi, case seçimini, animacy'yi ve temel fiil/edat kalıplarını açıklayabilir.</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card full">
+        <div class="section-title">
+          <div><h2>♾️ Sonsuz Pratik</h2><div class="meta" id="questionMeta"></div></div>
+          <div class="controls">
+            <select class="pill" id="topic"><option value="mixed">Karışık</option><option value="cases">Hâller</option><option value="verbs">Fiiller</option><option value="adjectives">Sıfat uyumu</option><option value="prepositions">Edatlar</option><option value="vocab">Kelime & cümle</option></select>
+            <button class="btn primary" id="newBtn">Yeni soru</button>
+          </div>
+        </div>
+        <div class="prompt">
+          <div class="meta">TÜRKÇE</div>
+          <div class="tr" id="trPrompt"></div>
+          <div class="meta" style="margin-top:15px">RUSÇA — sözlük/temel hâli</div>
+          <div class="ru" id="ruBase"></div>
+          <div class="hint" id="hint"></div>
+        </div>
+        <div class="answerrow">
+          <input id="answer" autocomplete="off" placeholder="Doğru Rusça biçimi / cümleyi yaz…">
+          <button class="btn good" id="checkBtn">Kontrol et</button>
+        </div>
+        <div class="feedback" id="feedback">
+          <h3 id="feedbackTitle"></h3>
+          <div class="explain" id="explain"></div>
+          <div class="explain" id="correctAnswer" style="margin-top:10px"></div>
+          <div style="margin-top:14px"><button class="btn primary" id="nextBtn">Sonraki soru →</button></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title"><h2>📚 Gramer Haritası</h2><span class="meta">A1–C2</span></div>
+        <div class="tabs" id="grammarTabs"></div>
+        <div class="grammar" id="grammar"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title"><h2>🧩 6 Hâl</h2><span class="meta">Падежи</span></div>
+        <table class="case-table"><thead><tr><th>Hâl</th><th>Soru</th><th>Temel işlev</th></tr></thead><tbody id="caseBody"></tbody></table>
+      </div>
+    </section>
+    <div class="footer">Bu uygulama eğitim amaçlıdır. Rusça gramerde istisnalar ve bağlama bağlı biçimler vardır; açıklamalar özellikle öğrenme için sadeleştirilmiş kuralları temel alır.</div>
+  </main>
+</div>
+<script src="/main.js"></script>
+</body>
+</html>
